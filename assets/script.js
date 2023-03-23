@@ -24,9 +24,10 @@ const dots = document.getElementsByClassName('dots')[0]
 
 
 document.getElementsByClassName("arrow_left")[0].addEventListener("click", logArrowLeft);
+document.getElementsByClassName("arrow_right")[0].addEventListener("click", logArrowRight);
+
 
 function logArrowLeft() {
-	console.log("arrow-leftCLICKED");
 	if (slide_current <= 0) {
 		slide_current = 3;
 		console.log(slide_current);
@@ -37,10 +38,16 @@ function logArrowLeft() {
 	changeSlide();
 }
 
-document.getElementsByClassName("arrow_right")[0].addEventListener("click", logArrowRight);
 
 function logArrowRight() {
-	console.log("arrow-rightCLICKED");
+	if (slide_current >= 3) {
+		slide_current = 0;
+		console.log(slide_current);
+	} else {
+		slide_current = (slide_current + 1);
+		console.log(slide_current);
+	};
+	changeSlide();
 }
 
 
@@ -57,4 +64,6 @@ function changeSlide() {
 	console.log("change");
 	document.getElementsByClassName("dot_selected")[0].classList.remove("dot_selected");
 	document.getElementsByClassName("dot")[slide_current].classList.add("dot_selected");
+	banner_img[0].src = "./assets/images/slideshow/" + slides[slide_current].image;
+	banner_text[0].innerHTML = slides[slide_current].tagLine;
 }
