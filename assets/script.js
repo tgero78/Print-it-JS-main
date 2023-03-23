@@ -17,10 +17,11 @@ const slides = [
 	}
 ]
 
-let slide_current = 0;
-const dots = document.getElementsByClassName("dots");
-const banner_img = document.getElementsByClassName('banner-img');
-const banner_text = document.getElementsByClassName('banner-text');
+let slide_current = 0
+const banner_img = document.getElementsByClassName('banner-img')
+const banner_text = document.getElementsByClassName('banner-text')
+const dots = document.getElementsByClassName('dots')[0]
+
 
 document.getElementsByClassName("arrow_left")[0].addEventListener("click", logArrowLeft);
 
@@ -33,3 +34,14 @@ document.getElementsByClassName("arrow_right")[0].addEventListener("click", logA
 function logArrowRight() {
 	console.log("arrow-rightCLICKED");
 }
+
+
+for (let i = 0; i < slides.length; i++) {
+	sinlgeDot = document.createElement('div');
+	dots.appendChild(sinlgeDot);
+	sinlgeDot.classList.add('dot');
+	console.log(sinlgeDot)
+  }
+
+
+
