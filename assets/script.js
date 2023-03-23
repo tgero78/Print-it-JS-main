@@ -27,6 +27,14 @@ document.getElementsByClassName("arrow_left")[0].addEventListener("click", logAr
 
 function logArrowLeft() {
 	console.log("arrow-leftCLICKED");
+	if (slide_current <= 0) {
+		slide_current = 3;
+		console.log(slide_current);
+	} else {
+		slide_current = (slide_current - 1);
+		console.log(slide_current);
+	};
+	changeSlide();
 }
 
 document.getElementsByClassName("arrow_right")[0].addEventListener("click", logArrowRight);
@@ -40,8 +48,13 @@ for (let i = 0; i < slides.length; i++) {
 	sinlgeDot = document.createElement('div');
 	dots.appendChild(sinlgeDot);
 	sinlgeDot.classList.add('dot');
-	console.log(sinlgeDot)
-  }
+	console.log(sinlgeDot);
+}
 
+document.getElementsByClassName("dot")[slide_current].classList.add("dot_selected")
 
-
+function changeSlide() {
+	console.log("change");
+	document.getElementsByClassName("dot_selected")[0].classList.remove("dot_selected");
+	document.getElementsByClassName("dot")[slide_current].classList.add("dot_selected");
+}
