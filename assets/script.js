@@ -18,18 +18,17 @@ const slides = [
 ]
 
 let slide_current = 0;
-const dots = document.getElementsByClassName=("dots");
+const dots = document.getElementsByClassName("dots");
 
 
 
-
-document.getElementsByClassName("arrow_left")[0].addEventListener("click", LogArrowLeft);
+document.getElementsByClassName("arrow_left")[0].addEventListener("click", logArrowLeft);
 
 function logArrowLeft() {
 	console.log("arrow-leftCLICKED");
 }
 
-document.getElementsByClassName("arrow_right")[0].addEventListener("click", LogArrowRight);
+document.getElementsByClassName("arrow_right")[0].addEventListener("click", logArrowRight);
 
 function logArrowRight() {
 	console.log("arrow-rightCLICKED");
